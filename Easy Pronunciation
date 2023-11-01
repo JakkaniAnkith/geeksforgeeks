@@ -1,0 +1,17 @@
+
+n=int(input())
+for i in range(n):
+    a= int(input())
+    s=input()
+    v=['a','e','i','o','u']
+    c=0
+    for i in range(len(s)):
+        if(s[i] not in v):
+            c+=1
+        if s[i] in v:
+            c=0
+        if(c>=4):
+            print("NO")
+            break
+    else:
+        print("YES)
