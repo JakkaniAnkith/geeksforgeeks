@@ -1,0 +1,12 @@
+n=int(input())
+for i in range(n):
+    a,b=map(int,input().split())
+    arr=list(map(int,input().split()))
+    z=''
+    for j in range(a):
+        if arr[j]<=b:
+            b=b-arr[j]
+            z+='1'
+        else:
+            z+='0'
+    print(z)
