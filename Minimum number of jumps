@@ -1,0 +1,14 @@
+class Solution:
+	def minJumps(self, arr, n):
+	    #code here
+	    f=0
+	    c=0
+	    j=0
+	    for i in range(n-1):
+	        f=max(f,arr[i]+i)
+	        if i==c:
+	            j+=1
+	            c=f
+	    if c>=n-1:
+	        return j
+	    return -1
