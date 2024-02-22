@@ -1,0 +1,14 @@
+class Solution:
+    def longestCommonPrefix(self, arr, n):
+        # code here
+        c=''
+        arr=sorted(arr)
+        for j in range(min(len(arr[0]),len(arr[n-1]))):
+            if arr[0][j]==arr[n-1][j]:
+                c+=arr[0][j]
+            else:
+                break
+        if len(c)>0:
+            return c
+        else:
+            return -1
