@@ -1,0 +1,20 @@
+class Solution:
+    def maxOnes (self, Mat, N, M):
+        # code here 
+        k=0
+        d={}
+        for i in Mat:
+            
+            for j in i:
+                if j==1:
+                    if k in d:
+                        d[k]+=1
+                    else:
+                        d[k]=1
+            k+=1
+        m=0
+        for i in d:
+            m=max(m,d[i])
+        for i in d:
+            if d[i]==m:
+                return i
