@@ -1,0 +1,30 @@
+class Solution:
+    #Function to sort a linked list of 0s, 1s and 2s.
+    def segregate(self, head):
+        #code here
+        t=head
+        q=head
+        if head==None or head.next==None:
+            return head
+        c0=c1=c2=0
+        while(head!=None):
+            if head.data==0:
+                c0+=1
+            if head.data==1:
+                c1+=1
+            if head.data==2:
+                c2+=1
+            head=head.next
+        while(q):
+            if c0>0:
+                q.data=0
+                c0-=1
+            elif c1>0:
+                q.data=1
+                c1-=1
+            elif c2>0:
+                q.data=2
+                c2-=1
+            q=q.next
+        return t
+        
