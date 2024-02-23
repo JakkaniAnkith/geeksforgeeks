@@ -1,0 +1,15 @@
+class Solution:
+    def trappingWater(self, arr,n):
+        #Code here
+        t=0
+        lb=[0]*n
+        rb=[0]*n
+        lb[0]=arr[0]
+        rb[n-1]=arr[n-1]
+        for i in range(1,n):
+            lb[i]=max(arr[i],lb[i-1])
+        for i in range(n-2,-1,-1):
+            rb[i]=max(arr[i],rb[i+1])
+        for i in range(n):
+            t+=min(lb[i],rb[i])-arr[i]
+        return t
