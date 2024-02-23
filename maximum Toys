@@ -1,0 +1,10 @@
+class Solution:
+    def toyCount(self, N, K, arr):
+        # code here
+        c=0
+        arr.sort()
+        for i in range(N):
+            if arr[i]<=K:
+                c+=1
+                K-=arr[i]
+        return c
