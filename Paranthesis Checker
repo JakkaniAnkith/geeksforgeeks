@@ -1,0 +1,14 @@
+class Solution:
+    
+    #Function to check if brackets are balanced or not.
+    def ispar(self,x):
+        a=[]
+        d={'(':')','{':'}','[':']'}
+        for i in x:
+            if i in d:
+                a.append(i)
+            else:
+                if len(a)==0 or a[-1] not in d or d[a[-1]]!=i:
+                    return False
+                a.pop()
+        return len(a)==0
