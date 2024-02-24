@@ -1,0 +1,13 @@
+class Solution:
+
+    def longestSubstrDistinctChars(self, S):
+        # code here
+        a=''
+        m=0
+        for i in S:
+            if i in a:
+                m=max(m,len(a))
+                a=a[a.index(i)+1:]
+            a+=i
+        m=max(m,len(a))
+        return m
